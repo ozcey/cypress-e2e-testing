@@ -1,0 +1,7 @@
+{
+    "baseUrl": "http://localhost:5000/career-center/api",
+    "env":{
+        "USERNAME": "admin",
+        "PASSWORD": "password"
+    }
+}
