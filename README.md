@@ -1,2 +1,2 @@
 # cypress-api-test
-API Testing With Cypress
+API Testing with Cypress
