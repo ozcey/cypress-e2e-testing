@@ -1,2 +1,1 @@
-# cypress-api-test
-API Testing with Cypress
+# Cypress-E2E-tests
