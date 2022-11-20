@@ -24,33 +24,25 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('register', () => {
-    const requestBody = {
-        "name": "Admin User",
-        "username": "Admin",
-        "password": "password",
-        "role": "ROLE_ADMIN"
-    };
+Cypress.Commands.add('register', (user) => {
     cy.request({
         method: 'POST',
         url: '/auth/register',
-        body: requestBody,
+        body: user,
         failOnStatusCode: false
     }).then((res) => {
         const { body } = res;
         expect(res.status).equal(201);
-        expect(body).to.have.property('id');
-        expect(body).to.have.property('username', body.username);
-        Cypress.env('user_id', body.id);
-        Cypress.env('username', requestBody.username);
-        Cypress.env('password', requestBody.password);
+        expect(body.data).to.have.property('id');
+        expect(body.data).to.have.property('email', user.email);
+        Cypress.env('user_id', body.data.id);
     });
 });
 
-Cypress.Commands.add('login', () => {
+Cypress.Commands.add('login', (email, password) => {
     const body = {
-        "username": Cypress.env('username'),
-        "password": Cypress.env('password')
+        "email": email,
+        "password": password
     };
 
     cy.request({

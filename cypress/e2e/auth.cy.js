@@ -3,10 +3,9 @@ import {user} from '../fixtures/userData.js';
 
 let userId, token;
 
-describe('AUth API Tests', () => {
+describe('Auth API Tests', () => {
 
     it('User can register a new account', () => {
-        console.log('user', user);
         cy.request({
             method: 'POST',
             url: '/auth/register',
