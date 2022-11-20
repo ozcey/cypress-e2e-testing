@@ -24,15 +24,45 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (username, password) => {
-    const body = {
-        "username": username,
-        "password": password
-    }
-    cy.request('POST', '/auth/login', body).then(res => {
-        expect(res.status).equal(200);
-        expect(res.body).to.have.property('token');
-        expect(res.body).has.property('tokenType', 'Bearer');
-        Cypress.env('token', res.body.token);
+Cypress.Commands.add('register', () => {
+    const requestBody = {
+        "name": "Admin User",
+        "username": "Admin",
+        "password": "password",
+        "role": "ROLE_ADMIN"
+    };
+    cy.request({
+        method: 'POST',
+        url: '/auth/register',
+        body: requestBody,
+        failOnStatusCode: false
+    }).then((res) => {
+        const { body } = res;
+        expect(res.status).equal(201);
+        expect(body).to.have.property('id');
+        expect(body).to.have.property('username', body.username);
+        Cypress.env('user_id', body.id);
+        Cypress.env('username', requestBody.username);
+        Cypress.env('password', requestBody.password);
     });
-})
+});
+
+Cypress.Commands.add('login', () => {
+    const body = {
+        "username": Cypress.env('username'),
+        "password": Cypress.env('password')
+    };
+
+    cy.request({
+        method: 'POST',
+        url: '/auth/login',
+        body: body,
+        failOnStatusCode: false
+    }).then((res) => {
+        const { body } = res;
+        expect(res.status).equal(200);
+        expect(body).to.have.property('token');
+        Cypress.env('token', body.token);
+    });
+
+});
