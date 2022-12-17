@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('register', (user) => {
-    cy.request({
+    cy.api({
         method: 'POST',
         url: '/auth/register',
         body: user,
@@ -45,7 +45,7 @@ Cypress.Commands.add('login', (email, password) => {
         "password": password
     };
 
-    cy.request({
+    cy.api({
         method: 'POST',
         url: '/auth/login',
         body: body,

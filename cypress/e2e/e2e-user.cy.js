@@ -8,7 +8,7 @@ const user = {
     roles: ['ROLE_USER']
 }
 
-describe('end to end user api', () => {
+describe.skip('end to end user api', () => {
     before(() => {
          cy.request('POST', '/auth/signup', user).then((res) => {
              console.log(res.body);

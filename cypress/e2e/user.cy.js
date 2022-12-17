@@ -11,7 +11,7 @@ describe('User API Tests', () => {
     });
 
     after(() => {
-        cy.request({
+        cy.api({
             method: 'DELETE',
             url: '/user/delete/' + Cypress.env('user_id'),
             failOnStatusCode: false,
@@ -26,7 +26,7 @@ describe('User API Tests', () => {
     });
 
     it('Admin user can retrieve all users', () => {
-        cy.request({
+        cy.api({
             method: 'GET',
             url: '/user',
             failOnStatusCode: false,
@@ -40,7 +40,7 @@ describe('User API Tests', () => {
     });
 
     it('Admin user can retrieve an user by id', () => {
-        cy.request({
+        cy.api({
             method: 'GET',
             url: '/user/' + Cypress.env('user_id'),
             failOnStatusCode: false,
@@ -60,7 +60,7 @@ describe('User API Tests', () => {
     });
 
     it('Admin user can create a new user', () => {
-        cy.request({
+        cy.api({
             method: 'POST',
             url: '/user/create',
             body: new_user,
@@ -84,7 +84,7 @@ describe('User API Tests', () => {
 
 
     it('Admin user can update an existing user', () => {
-        cy.request({
+        cy.api({
             method: 'PUT',
             url: '/user/update/' + newUserId,
             body: updated_user,
@@ -100,7 +100,7 @@ describe('User API Tests', () => {
 
 
     it('Admin user can delete account', () => {
-        cy.request({
+        cy.api({
             method: 'DELETE',
             url: '/user/delete/' + newUserId,
             failOnStatusCode: false,
