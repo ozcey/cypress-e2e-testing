@@ -1,12 +1,12 @@
 /// <reference types="Cypress" />
-import {user} from '../fixtures/userData.js';
+import { user } from '../fixtures/userData.js';
 
 let userId, token;
 
 describe('Auth API Tests', () => {
 
     it('User can register a new account', () => {
-        cy.request({
+        cy.api({
             method: 'POST',
             url: '/auth/register',
             body: user,
@@ -26,7 +26,7 @@ describe('Auth API Tests', () => {
             "password": user.password
         };
 
-        cy.request({
+        cy.api({
             method: 'POST',
             url: '/auth/login',
             body: body,
@@ -40,7 +40,7 @@ describe('Auth API Tests', () => {
     });
 
     it('User can retrieve logged in user details', () => {
-        cy.request({
+        cy.api({
             method: 'GET',
             url: '/auth/me',
             failOnStatusCode: false,
@@ -64,7 +64,7 @@ describe('Auth API Tests', () => {
             "name": 'John Walker'
         };
 
-        cy.request({
+        cy.api({
             method: 'PUT',
             url: '/auth/updatedetails',
             body: body,
@@ -85,7 +85,7 @@ describe('Auth API Tests', () => {
             "newPassword": '12345678'
         };
 
-        cy.request({
+        cy.api({
             method: 'PUT',
             url: '/auth/updatepassword',
             body: body,
@@ -101,7 +101,7 @@ describe('Auth API Tests', () => {
     });
 
     it('User can delete account', () => {
-        cy.request({
+        cy.api({
             method: 'DELETE',
             url: '/user/delete/' + userId,
             failOnStatusCode: false,

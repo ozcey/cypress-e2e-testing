@@ -4,7 +4,7 @@
   "description": "API Testing With Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/ozcey/cypress-api-test#readme",
   "devDependencies": {
     "cypress": "^11.1.0"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.6.1"
   }
 }
