@@ -7,6 +7,13 @@ describe('Applicant Tests', () => {
         cy.viewport('macbook-16');
     });
 
+    it('Applicant should see applicant home page', () => {
+        cy.contains('Applicant Home');
+        cy.contains('Career Center’s FREE Career Coaching Program connects');
+        cy.get('.btn-primary')
+            .should('contain.text', 'Apply now')
+    });
+
     it('Applicant should sign up successfully', () => {
         cy.contains('Applicant Home');
         cy.get('.btn-primary')
