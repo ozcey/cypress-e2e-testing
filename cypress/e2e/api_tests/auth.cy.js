@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import { user } from '../fixtures/userData.js';
+import { user } from '../../fixtures/userDataForAPI.js';
 
 let userId, token;
 

@@ -1,6 +1,6 @@
 
 /// <reference types="Cypress" />
-import { user, new_user, updated_user } from '../fixtures/userData';
+import { user, new_user, updated_user } from '../../fixtures/userDataForAPI';
 
 const proerties = ['name', 'email', 'username', 'role']
 let newUserId;

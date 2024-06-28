@@ -1,21 +1,22 @@
-
 export const user = {
+    "name": "Mike Scott",
+    "username": "mike",
+    "email": "mike@gmail.com",
+    "password": "password"
+};
+
+export const user2 = {
     "name": "John Doe",
+    "username": "john",
     "email": "john@gmail.com",
     "password": "password",
-    "role": "ROLE_ADMIN"
+    "role": "USER"
 };
 
-export const new_user = {
-    "name": "Mike Scott",
-    "email": "mike@gmail.com",
+export const admin_user = {
+    "name": "Admin User",
+    "username": "admin",
+    "email": "admin@gmail.com",
     "password": "password",
-    "role": "ROLE_USER"
-};
-
-export const updated_user = {
-    "name": "Andy M. Scott",
-    "email": "adny@gmail.com",
-    "password": "12345678",
-    "role": "ROLE_USER"
+    "roles": ['ROLE_ADMIN']
 };
