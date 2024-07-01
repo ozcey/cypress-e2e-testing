@@ -21,3 +21,6 @@ import 'cypress-plugin-api'
 // require('./commands')
 import "cypress-real-events/support";
 
+const registerCypressGrep = require('@cypress/grep')
+registerCypressGrep()
+

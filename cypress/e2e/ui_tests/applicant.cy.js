@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { applicant, programOfferings } from "../../fixtures/applicantData";
 
-describe("Applicant Tests", () => {
+describe("Applicant Tests", {tags: ['@UI', '@e2e']}, () => {
     beforeEach(() => {
         cy.visit("/applicant");
         cy.viewport("macbook-16");

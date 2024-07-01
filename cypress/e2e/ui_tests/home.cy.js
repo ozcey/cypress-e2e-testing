@@ -1,6 +1,6 @@
 import { cardData } from "../../fixtures/homeData";
 
-describe('Home Tests', () => {
+describe('Home Tests', {tags: ['@UI', '@e2e']}, () => {
     beforeEach(() => {
         cy.visit("/");
         cy.viewport("macbook-16");

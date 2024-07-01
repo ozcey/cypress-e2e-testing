@@ -1,6 +1,6 @@
 import { user } from "../../fixtures/userData";
 
-describe('Auth Tests', () => {
+describe('Auth Tests', {tags: ['@UI', '@e2e']}, () => {
 
     before(() => {
         cy.viewport('macbook-16');

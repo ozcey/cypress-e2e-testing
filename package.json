@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ozcey/cypress-api-test#readme",
   "devDependencies": {
+    "@cypress/grep": "^4.0.2",
     "cypress": "^11.1.0"
   },
   "dependencies": {

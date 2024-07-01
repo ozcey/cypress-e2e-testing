@@ -1,11 +1,16 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  env: {
+    grepOmitFiltered: true
+  },
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
+      require('@cypress/grep/src/plugin')(config);
+      require('./cypress/plugins/index.js')(on, config)
+      return config;
     },
     baseUrl: 'http://localhost:4200',
     video: false,

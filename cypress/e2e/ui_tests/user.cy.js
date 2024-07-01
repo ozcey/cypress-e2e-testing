@@ -1,6 +1,6 @@
 import { user, user2 } from "../../fixtures/userData";
 
-describe('User Tests', () => {
+describe('User Tests', {tags: ['@UI', '@e2e']}, () => {
     before(() => {
         // sign up as admin using api
         // cy.request({
