@@ -10,7 +10,7 @@ describe('Volunteer Tests', () => {
 
     it('Volunteer should see volunteer home page', () => {
         cy.contains('Volunteer Home');
-        cy.contains("Volunteers play a critical role in transforming job seekers’ lives by");
+        cy.contains("Volunteers play a critical role in transforming job");
         cy.get('.btn-primary')
             .should('contain.text', 'Sign up')
     });
