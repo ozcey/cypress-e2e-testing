@@ -1,9 +1,6 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  env: {
-    grepOmitFiltered: true
-  },
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
@@ -16,7 +13,8 @@ module.exports = defineConfig({
     video: false,
     env: {
       snapshotOnly: true,
-      hideCredentials: true
+      hideCredentials: true,
+      grepOmitFiltered: true
     }
   },
 })
