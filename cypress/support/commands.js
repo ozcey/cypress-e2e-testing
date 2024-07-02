@@ -61,7 +61,7 @@ Cypress.Commands.add('login', (email, password) => {
 
 Cypress.Commands.add('loginViaUI', (username, password) => {
     cy.visit('/login');
-    cy.contains('Login to your account')
+    cy.contains('Log in to your account')
     // fill the form
     cy.get('#username').type(username);
     cy.get('#password').type(password);
