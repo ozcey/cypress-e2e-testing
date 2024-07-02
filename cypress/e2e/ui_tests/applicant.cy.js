@@ -13,7 +13,7 @@ describe("Applicant Tests", {tags: ['@UI', '@e2e']}, () => {
         cy.get(".btn-primary").should("contain.text", "Apply now");
     });
 
-    it.only("Applicant should sign up successfully", () => {
+    it("Applicant should sign up successfully", () => {
         cy.contains("Applicant Home");
         cy.get(".btn-primary").should("contain.text", "Apply now").click();
         // Contact Info
