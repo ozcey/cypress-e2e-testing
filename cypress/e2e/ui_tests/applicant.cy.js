@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import { applicant, programOfferings } from "../../fixtures/applicantData";
 
 describe("Applicant Tests", {tags: ['@UI', '@e2e']}, () => {
@@ -22,14 +21,12 @@ describe("Applicant Tests", {tags: ['@UI', '@e2e']}, () => {
         cy.get("#phone").type(applicant.phone);
         cy.get("#email").type(applicant.email);
         cy.get("#next_1").click();
-
         // Address info
         cy.get("#street").type(applicant.address.street);
         cy.get("#city").type(applicant.address.city);
         cy.get("#state").type(applicant.address.state);
         cy.get("#zipcode").type(applicant.address.zipcode);
         cy.get("#next_2").click();
-
         // Job info
         cy.get("#category").click();
         cy.wait(2000);
@@ -43,7 +40,6 @@ describe("Applicant Tests", {tags: ['@UI', '@e2e']}, () => {
         cy.wait(2000);
         cy.get("#mat-option-5 > .mat-option-text").click();
         cy.get("#next_3").click();
-
         // Submit
         cy.get("#submit").click();
         cy.get(".alert").contains("Applicant created successfully.");

@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import { volunteer, cardData } from "../../fixtures/volunteerData";
 
 describe('Volunteer Tests', {tags: ['@UI', '@e2e']}, () => {
