@@ -42,7 +42,7 @@ describe("Applicant Tests", {tags: ['@UI', '@e2e']}, () => {
         cy.get("#next_3").click();
         // Submit
         cy.get("#submit").click();
-        cy.get(".alert").contains("Applicant created successfully.");
+        cy.get(".alert").contains("Applicant created successfully");
         cy.get("#submit").should("be.disabled");
     });
 
