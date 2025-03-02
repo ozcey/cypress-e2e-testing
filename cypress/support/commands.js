@@ -69,4 +69,18 @@ Cypress.Commands.add('loginViaUI', (username, password) => {
     cy.get('#submit').click();
 });
 
+Cypress.Commands.add('shopifyLogin', (username, password) => {
+    cy.visit('/login');
+    cy.contains('Login');
+    cy.get('.btn').contains('Login').as('loginBtn');
+    cy.get('@loginBtn').should('be.disabled');
+    // fill the form
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.get('@loginBtn').should('be.enabled').click();
+
+    cy.url().should('include', '/account');
+})
+
+
 
