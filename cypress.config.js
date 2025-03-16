@@ -10,7 +10,6 @@ module.exports = defineConfig({
       return config;
     },
     baseUrl: 'http://localhost:4200',
-    // baseUrl: 'https://uss-devite01.dev.cloudpak.security.ibm.com',
     video: false,
     env: {
       snapshotOnly: true,
